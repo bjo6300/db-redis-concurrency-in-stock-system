@@ -20,9 +20,11 @@ class StockServiceTest {
 
     @BeforeEach
     public void insert() {
-        Stock stock = new Stock(1L, 100L);
+        Stock stock = new Stock(1L, 1L, 100L);
 
         stockRepository.saveAndFlush(stock);
+
+        System.out.println("Stock saved: " + stockRepository.findById(1L));
     }
 
     @AfterEach

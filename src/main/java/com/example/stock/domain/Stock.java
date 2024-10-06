@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 public class Stock {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long productId;
@@ -27,7 +26,8 @@ public class Stock {
         this.quantity -= quantity;
     }
 
-    public Stock(Long productId, Long quantity) {
+    public Stock(Long id, Long productId, Long quantity) {
+        this.id = id;
         this.productId = productId;
         this.quantity = quantity;
     }
